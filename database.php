@@ -7,11 +7,14 @@ header('Content-type: application/json');
 // header('Access-Control-Allow-Origin: localhost:8080')
 // header('Access-Control-Allow-Origin', 'http://zti-frontend.herokuapp.com/');
 
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "zai_database";
+$servername = "sql7.freesqldatabase.com";
+$username = "sql7384711";
+$password = "LsrMReaRfn";
+$dbname = "sql7384711";
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "zai_database";
 
 // $servername = "mysql.cba.pl";
 // $username = "Kicimial126";
