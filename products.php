@@ -6,15 +6,11 @@ include 'database.php';
 $json = file_get_contents('php://input');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
-    $obj = json_decode(file_get_contents('php://input'));  
-    // $startAt = $_POST['startAt'];
-    // $perPage = $_POST['perPage'];
-    $startAt = $obj->startAt;
-    $perPage = $obj->perPage;
-
-        // if(isset($_POST['category'])) {
-        //     $category = $_POST['category'];
-        // }
+    $startAt = $_POST['startAt'];
+    $perPage = $_POST['perPage'];
+        if(isset($_POST['category'])) {
+            $category = $_POST['category'];
+        }
 
 
     $count = 0;
@@ -24,11 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $count = $res_count->num_rows;
     }
 
-    // if(isset($_POST['category'])) {
-    //     $sql = "SELECT * FROM products WHERE category_id='$category' LIMIT $startAt, $perPage";
-    // } else {
+    if(isset($_POST['category'])) {
+        $sql = "SELECT * FROM products WHERE category_id='$category' LIMIT $startAt, $perPage";
+    } else {
         $sql = "SELECT * FROM products LIMIT $startAt, $perPage";
-    // }
+    }
     
 
         $result = $conn->query($sql);
